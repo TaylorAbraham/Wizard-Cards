@@ -244,6 +244,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/cardengine/animation/scale_sequence.gd"
 }, {
+"base": "SpellsPrivate",
+"class": "Spells",
+"language": "GDScript",
+"path": "res://containers/spells/spells.gd"
+}, {
+"base": "AbstractContainer",
+"class": "SpellsPrivate",
+"language": "GDScript",
+"path": "res://_private/containers/spells/spells_private.gd"
+}, {
 "base": "Reference",
 "class": "StepTransition",
 "language": "GDScript",
@@ -337,6 +347,8 @@ _global_script_class_icons={
 "Query": "",
 "RotationSequence": "",
 "ScaleSequence": "",
+"Spells": "",
+"SpellsPrivate": "",
 "StepTransition": "",
 "StepValue": "",
 "TokenGrid": "",
@@ -376,7 +388,7 @@ window/size/height=720
 
 [editor_plugins]
 
-enabled=PoolStringArray( "cardengine", "godot-plugin-refresher" )
+enabled=PoolStringArray( "cardengine" )
 
 [gui]
 
