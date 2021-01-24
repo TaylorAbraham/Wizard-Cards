@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://screens/game/game_screen.gd" type="Script" id=1]
 [ext_resource path="res://widgets/small_button/small_button.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://containers/token_grid/token_grid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/ArchivoNarrow-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://screens/game/mana_point.png" type="Texture" id=6]
+[ext_resource path="res://containers/spells/spells.tscn" type="PackedScene" id=7]
+[ext_resource path="res://cards/token/token.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -31,6 +33,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.45098, 0.509804, 0.701961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DeckZone" type="ColorRect" parent="."]
 anchor_left = 0.5
@@ -132,15 +137,15 @@ __meta__ = {
 }
 
 [node name="PlayZone" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -200.0
-margin_top = -300.0
-margin_right = 200.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 300, 300 )
+anchor_left = 0.509
+anchor_top = 0.222
+anchor_right = 0.509
+anchor_bottom = 0.222
+margin_left = -400.52
+margin_top = -99.84
+margin_right = 399.48
+margin_bottom = 100.16
+rect_min_size = Vector2( 800, 200 )
 color = Color( 0.14902, 0.172549, 0.239216, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -149,9 +154,9 @@ __meta__ = {
 [node name="TokenGrid" parent="PlayZone" instance=ExtResource( 4 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
+margin_left = 8.66516
 margin_top = 10.0
-margin_right = -10.0
+margin_right = -11.3348
 margin_bottom = -10.0
 in_anchor = NodePath("../TokenInOut")
 out_anchor = NodePath("../TokenInOut")
@@ -161,6 +166,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+rect_scale = Vector2( 1e-05, 1e-05 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpellZone" type="ColorRect" parent="."]
+anchor_left = 0.505
+anchor_top = 0.534
+anchor_right = 0.505
+anchor_bottom = 0.534
+margin_left = -200.112
+margin_top = -100.22
+margin_right = 199.888
+margin_bottom = 99.7798
+rect_min_size = Vector2( 400, 200 )
+color = Color( 0.14902, 0.172549, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpellGrid" parent="SpellZone" instance=ExtResource( 7 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+card_visual = ExtResource( 8 )
+in_anchor = NodePath("../SpellInOut")
+out_anchor = NodePath("../SpellInOut")
+
+[node name="SpellInOut" type="Control" parent="SpellZone"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1.52588e-05
+margin_top = -7.62939e-06
+margin_right = 1.52588e-05
+margin_bottom = -7.62939e-06
 rect_scale = Vector2( 1e-05, 1e-05 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -290,6 +335,7 @@ stretch_mode = 6
 margin_left = 578.0
 margin_right = 753.0
 rect_min_size = Vector2( 175, 55 )
+texture_click_mask = null
 button_text = "END TURN"
 
 [node name="HandZone" type="ColorRect" parent="."]
@@ -427,6 +473,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -175.0
 margin_right = 0.0
+texture_click_mask = null
 button_text = "MENU"
 
 [node name="StartingHandDelay" type="Timer" parent="."]
@@ -438,6 +485,8 @@ autostart = true
 [connection signal="pressed" from="DiscardZone/ReshuffleBtn" to="." method="_on_ReshuffleBtn_pressed"]
 [connection signal="card_clicked" from="PlayZone/TokenGrid" to="." method="_on_TokenGrid_card_clicked"]
 [connection signal="card_dropped" from="PlayZone/TokenGrid" to="." method="_on_TokenGrid_card_dropped"]
+[connection signal="card_clicked" from="SpellZone/SpellGrid" to="." method="_on_SpellGrid_card_clicked"]
+[connection signal="card_dropped" from="SpellZone/SpellGrid" to="." method="_on_SpellGrid_card_dropped"]
 [connection signal="pressed" from="ManaBar/EndTurnBtn" to="." method="_on_EndTurnBtn_pressed"]
 [connection signal="toggled" from="EffectsLayout/ManaMultiplier" to="." method="_on_ManaMultiplier_toggled"]
 [connection signal="pressed" from="EffectsLayout/ManaIncrease" to="." method="_on_ManaIncrease_pressed"]

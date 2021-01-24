@@ -4,6 +4,7 @@ const STARTING_HAND_SIZE: int = 4
 const MAX_HAND_SIZE: int = 8
 const MAX_MANA: int = 10
 const MAX_TOKENS: int = 4
+const MAX_SPELLS: int = 2
 
 var _mana_point := preload("res://screens/game/mana_point.png")
 var _mana_empty := preload("res://screens/game/mana_empty.png")
@@ -12,6 +13,7 @@ var _hand: CardHand = CardHand.new()
 var _draw_pile: CardPile = CardPile.new()
 var _discard_pile: CardPile = CardPile.new()
 var _tokens: CardPile = CardPile.new()
+var _spells: CardPile = CardPile.new()
 var _mana: int = MAX_MANA
 var _fx_mana_mult: EffectInstance = null
 
@@ -26,6 +28,7 @@ onready var _hand_filter = $EffectsLayout/FilterLayout/HandFilter
 onready var _discard_filter = $EffectsLayout/FilterLayout/DiscardFilter
 onready var _on_played_fx = $EffectsLayout/OnPlayedEffect
 onready var _token_grid = $PlayZone/TokenGrid
+onready var _spell_grid = $SpellZone/SpellGrid
 
 
 func _ready() -> void:
@@ -38,6 +41,8 @@ func _ready() -> void:
 
 	_token_grid.set_store(_tokens)
 	_token_grid.get_drop_area().set_source_filter(["hand"])
+	_spell_grid.set_store(_spells)
+	_spell_grid.get_drop_area().set_source_filter(["hand"])
 
 	if Gameplay.current_deck == null:
 		var db = CardEngine.db().get_database("main")
@@ -170,6 +175,32 @@ func _on_TokenGrid_card_dropped(card: CardInstance) -> void:
 	if _mana >= card_mana:
 		_hand.play_card(card.ref(), _discard_pile)
 		_tokens.add_card(CardInstance.new(card.data()))
+
+		if _on_played_fx.pressed:
+			var fx = CardEngine.fx().instantiate("mana_incr")
+			fx.affect(card)
+		if card_mana < 0:
+			_mana = 0
+		else:
+			_mana -= card_mana
+
+		_update_mana()
+
+
+func _on_SpellGrid_card_clicked(card):
+	if card != null:
+		_spells.remove_card(card.instance().ref())
+
+
+func _on_SpellGrid_card_dropped(card):
+	if _spells.count() >= MAX_SPELLS:
+		return
+
+	var card_mana = card.data().get_value("mana")
+
+	if _mana >= card_mana:
+		_hand.play_card(card.ref(), _discard_pile)
+		_spells.add_card(CardInstance.new(card.data()))
 
 		if _on_played_fx.pressed:
 			var fx = CardEngine.fx().instantiate("mana_incr")

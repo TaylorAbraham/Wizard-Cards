@@ -16,7 +16,7 @@ func _init() -> void:
 	_grid_card_spacing = Vector2(1.1, 1.1)
 	_grid_halign = HALIGN_LEFT
 	_grid_valign = VALIGN_TOP
-	_grid_columns = 2
+	_grid_columns = 4
 	_grid_expand = false
 
 	# Drag and drop parameters
