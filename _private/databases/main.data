@@ -1,0 +1,292 @@
+[meta]
+
+id="main"
+name="Main Database"
+
+[cards]
+
+card_146={
+"categories": {
+"class": "sorcery",
+"rarity": "common"
+},
+"texts": {
+"desc": "Destroy target artifact.",
+"name": "Shenanigans"
+},
+"values": {
+"mana": 1
+}
+}
+card_52={
+"categories": {
+"class": "enchantment",
+"rarity": "uncommon"
+},
+"texts": {
+"desc": "Whenever an opponent casts a red spell, you gain 2 life.",
+"name": "Warmth"
+},
+"values": {
+"mana": 1
+}
+}
+card_2={
+"categories": {
+"class": "creature",
+"creature_type": "spirit",
+"rarity": "uncommon"
+},
+"texts": {
+"desc": "Azorius Herald can't be blocked.
+When Azorius Herald enters the battlefield, you gain 4 life.
+When Azorius Herald enters the battlefield, sacrifice it unless Blue was spent to cast it.",
+"name": "Azorius Herald"
+},
+"values": {
+"mana": 2
+}
+}
+card_162={
+"categories": {
+"class": "creature",
+"creature_type": "hydra",
+"rarity": "rare"
+},
+"texts": {
+"desc": "This spell can't be countered.
+Haste, protection from blue
+Mistcutter Hydra enters the battlefield with X +1/+1 counters on it.",
+"name": "Mistcutter Hydra"
+},
+"values": {
+"mana": -1
+}
+}
+card_118={
+"categories": {
+"class": "sorcery",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Target player takes two extra turns after this one.",
+"name": "Time Stretch"
+},
+"values": {
+"mana": 8
+}
+}
+card_181={
+"categories": {
+"class": "enchantment",
+"enchantment_type": "aura",
+"rarity": "common"
+},
+"texts": {
+"desc": "Enchant creature
+Enchanted creature gets +2/+2 and has \"Green: Regenerate this creature.\"",
+"name": "Savage Silhouette"
+},
+"values": {
+"mana": 2
+}
+}
+card_62={
+"categories": {
+"class": "creature",
+"creature_type": "human_knight",
+"rarity": "common"
+},
+"texts": {
+"desc": "First strike",
+"name": "Youthful Knight"
+},
+"values": {
+"mana": 1
+}
+}
+card_106={
+"categories": {
+"class": "artifact_creature",
+"creature_type": "slith",
+"rarity": "uncommon"
+},
+"texts": {
+"desc": "Whenever Arcbound Slith deals combat damage to a player, put a +1/+1 counter on it.",
+"name": "Arcbound Slith"
+},
+"values": {
+"mana": 2
+}
+}
+card_201={
+"categories": {
+"class": "sorcery",
+"rarity": "common"
+},
+"texts": {
+"desc": "Destroy target land.",
+"name": "Lay Waste"
+},
+"values": {
+"mana": 3
+}
+}
+card_126={
+"categories": {
+"class": "creature",
+"creature_type": "human_artificier",
+"rarity": "common"
+},
+"texts": {
+"desc": "When Thopter Engineer enters the battlefield, create a 1/1 colorless Thopter artifact creature token with flying.",
+"name": "Thopter Engineer"
+},
+"values": {
+"mana": 2
+}
+}
+card_51={
+"categories": {
+"class": "legendary_creature",
+"creature_type": "sphinx",
+"rarity": "mythic_rare"
+},
+"texts": {
+"desc": "Flying, vigilance, menace
+Whenever Yennett, Cryptic Sovereign attacks, reveal the top card of your library. You may cast it without paying its mana cost if its converted mana cost is odd. If you don't cast it, draw a card.",
+"name": "Yennett"
+},
+"values": {
+"mana": 2
+}
+}
+card_80={
+"categories": {
+"class": "enchantment",
+"enchantment_type": "aura",
+"rarity": "uncommon"
+},
+"texts": {
+"desc": "Enchant creature
+Enchanted creature gets +3/+3.
+At the beginning of the upkeep of enchanted creature's controller, put a -1/-1 counter on that creature.",
+"name": "Unstable Mutation"
+},
+"values": {
+"mana": 1
+}
+}
+card_7={
+"categories": {
+"class": "artifact_creature",
+"creature_type": "human_artificier",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Return an artifact you control to its owner's hand: You may put an artifact card from your hand onto the battlefield.",
+"name": "Master Transmuter"
+},
+"values": {
+"mana": 3
+}
+}
+card_233={
+"categories": {
+"class": "artifact",
+"rarity": "uncommon"
+},
+"texts": {
+"desc": "Tap: Add Colorless.
+Tap: Add White or Black. Talisman of Hierarchy deals 1 damage to you.",
+"name": "Talisman of Hierarchy"
+},
+"values": {
+"mana": 2
+}
+}
+card_46={
+"categories": {
+"class": "creature",
+"creature_type": "kavu",
+"rarity": "uncommon"
+},
+"texts": {
+"desc": "Trample
+Whenever an opponent gains life, put that many +1/+1 counters on Kavu Predator.",
+"name": "Kavu Predator"
+},
+"values": {
+"mana": 1
+}
+}
+card_142={
+"categories": {
+"class": "creature",
+"creature_type": "cyclops",
+"rarity": "common"
+},
+"texts": {
+"desc": "When Quakefoot Cyclops enters the battlefield, up to two target creatures can't block this turn.",
+"name": "Quakefoot Cyclops"
+},
+"values": {
+"mana": 4
+}
+}
+card_44={
+"categories": {
+"class": "instant",
+"rarity": "common"
+},
+"texts": {
+"desc": "As an additional cost to cast this spell, sacrifice a creature.
+Fling deals damage equal to the sacrificed creature's power to any target.",
+"name": "Fling"
+},
+"values": {
+"mana": 1
+}
+}
+card_302={
+"categories": {
+"class": "basic_land",
+"land_type": "forest"
+},
+"texts": {
+"desc": "Forest",
+"name": "Forest"
+},
+"values": {
+"mana": 0
+}
+}
+card_74={
+"categories": {
+"class": "creature",
+"creature_type": "human_cleric",
+"rarity": "uncommon"
+},
+"texts": {
+"desc": "Sacrifice a creature: You gain life equal to the sacrificed creature's toughness.",
+"name": "Disciple of Griselbrand"
+},
+"values": {
+"mana": 1
+}
+}
+card_28={
+"categories": {
+"class": "legendary_creature",
+"creature_type": "human_advisor",
+"rarity": "rare"
+},
+"texts": {
+"desc": "Sacrifice three white creatures: Exile target creature.
+Whenever another black creature you control dies, create a 1/1 white Spirit creature token with flying.",
+"name": "Teysa, Orzhov Scion"
+},
+"values": {
+"mana": 1
+}
+}
